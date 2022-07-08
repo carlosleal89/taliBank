@@ -8,12 +8,12 @@ public class TestaMetodo {
 		Scanner valor = new Scanner(System.in);
 		Scanner operacao = new Scanner(System.in);
 		
-		Conta carlos = new Conta();
-		Conta pompom = new Conta();
-		carlos.titular = new Cliente();
-		carlos.titular.setNome("Carlos");
-		carlos.titular.setCpf("018.268.540.19");
-		System.out.println(carlos.titular.getNome()+" "+carlos.titular.getCpf());
+		Conta contaCarlos = new Conta(666, 1001);
+		Conta contaPompom = new Conta(666, 1002);
+		Cliente carlos = new Cliente("Carlos Leal", "018.286.540.19", "Rua do ceu", "14/06/1989");
+		contaCarlos.setTitular(carlos);
+		
+		System.out.println(contaCarlos.getTitular().getNome()+" "+contaCarlos.getTitular().getCpf());
 		
 		boolean opcao = true;
 		
@@ -22,18 +22,18 @@ public class TestaMetodo {
 			int op = operacao.nextInt();
 			if (op == 1) {
 				System.out.println("Digite o valor para depósito: ");		
-				carlos.deposita(valor.nextDouble());
+				contaCarlos.deposita(valor.nextDouble());
 			}
 			if (op == 2) {
 				System.out.println("Digite o valor para saque:");
-				carlos.saca(valor.nextDouble());
+				contaCarlos.saca(valor.nextDouble());
 			}
 			if (op == 3) {
 				System.out.println("Digite o valor da transferencia: ");
-				carlos.transfere(pompom, valor.nextDouble());
+				contaCarlos.transfere(contaPompom, valor.nextDouble());
 				}
 			if (op == 4) {
-				System.out.println("Seu saldo é de: "+carlos.getSaldo());
+				System.out.println("Seu saldo é de: "+contaCarlos.getSaldo());
 			}
 			if (op == 5) {
 				System.out.println("Obrigado!");

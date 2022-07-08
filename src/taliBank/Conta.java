@@ -16,8 +16,12 @@ public class Conta {
 	}
 	
 	public void deposita(double valor) {
+		if (valor > 0) {
 		this.saldo += valor;
 		System.out.println("Depósito concluido. Seu saldo é de: "+this.saldo);
+		} else {
+			System.out.println("O valor precisa ser maior que zero.");
+		}
 	}
 	
 	public void saca(double valor) {
@@ -40,5 +44,13 @@ public class Conta {
 			return false;
 		}
 		
+	}
+	
+	public void setTitular(Cliente titular) {
+		this.titular = titular;
+	}
+	
+	public Cliente getTitular() {
+		return titular;
 	}
 }
