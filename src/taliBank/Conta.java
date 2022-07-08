@@ -2,9 +2,14 @@ package taliBank;
 
 public class Conta {
 	private double saldo;
-	int agencia;
-	int numero;
-	Cliente titular;
+	private int agencia;
+	private int numeroConta;
+	private Cliente titular;
+	
+	public Conta(int agencia, int numeroConta) {
+		this.agencia = agencia;
+		this.numeroConta = numeroConta;
+	}
 	
 	public double getSaldo() {
 		return saldo;
