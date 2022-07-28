@@ -85,7 +85,7 @@ public class TestaMetodo {
 					System.out.println("Seu saldo é de: "+titularConta.getSaldo());
 				}
 				if (op == 5) {
-					System.out.println("Obrigado!");
+					System.out.println("Obrigado !");
 					return;
 				}
 			
